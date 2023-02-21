@@ -62,7 +62,7 @@ function tieneEmail(objetoUsuario) {
    // Verifica si el "objetoUsuario", en su propiedad "email", posee un valor definido.
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   if(objetoUsuario.email === null || objetoUsuario.email === undefined){
+   if (objetoUsuario.email === null || objetoUsuario.email === undefined) {
       return false;
    }
 
@@ -105,9 +105,10 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
    // Debes agregar el "nuevoAmigo" al final de este arreglo.
    // Retornar el objeto.
    // Tu código:
-   objetoUsuario.amigos.push(nuevoAmigo)
+   objetoUsuario.amigos.push(nuevoAmigo);
 
-   return objetoUsuario
+   return objetoUsuario;
+
 }
 
 function pasarUsuarioAPremium(objetoMuchosUsuarios) {
@@ -116,12 +117,20 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
    // Define esta propiedad de todos los usuarios como true.
    // Retornar el arreglo.
    // Tu código:
-   objetoMuchosUsuarios.forEach(elem=>{
+
+   // for(let i = 0; i<objetoMuchosUsuarios.length; i++){
+   //    objetoMuchosUsuarios[i].esPremium = true;
+   // }
+
+   objetoMuchosUsuarios.forEach(elem => {
       elem.esPremium = true;
-   })
+   });
 
    return objetoMuchosUsuarios;
+
 }
+
+
 
 function sumarLikesDeUsuario(objetoUsuario) {
    // El parámetro "objetoUsuario" tiene una propiedad llamada "posts" que es un arreglo.
@@ -129,13 +138,16 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
-   let res = 0;
-   for(let i = 0; i< objetoUsuario.posts.length; i++){
-      res += objetoUsuario.posts[i].likes;
+   var res = 0;
+
+   for (let i = 0; i < objetoUsuario.posts.length; i++) {
+      res = res + objetoUsuario.posts[i].likes;
    }
+
    return res;
 
 }
+
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
    // Agrega una propiedad al "objetoProducto" con el nombre "calcularPrecioDescuento".
@@ -148,8 +160,9 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
+
    objetoProducto.calcularPrecioDescuento = function(){
-      let descuento = this.precio * this.porcentajeDeDescuento;
+      let descuento = this.precio * this.porcentajeDeDescuento; //
       return this.precio - descuento;
    }
 
