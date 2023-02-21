@@ -6,6 +6,15 @@ function deObjetoAarray(objeto) {
    // Estos elementos debe ser cada par clave:valor del objeto recibido.
    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
    // Tu código:
+   let res = []
+
+   for(const key in objeto){
+      let arr = []
+      arr.push(key.toString())
+      arr.push(objeto[key])
+      res.push(arr)
+   }
+   return res;
 }
 
 function numberOfCharacters(string) {
@@ -49,6 +58,7 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   return arrayOfStrings.sort((a, b) => a.length - b.length)
 }
 
 function buscoInterseccion(array1, array2) {
